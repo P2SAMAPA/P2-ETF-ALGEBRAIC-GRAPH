@@ -4,6 +4,7 @@ from scipy.linalg import eigvals, eigvalsh
 from scipy.sparse.linalg import eigs
 from numpy.polynomial import Polynomial
 import itertools
+import config
 
 def build_correlation_graph(returns_df, threshold=0.5, use_weights=True):
     """
