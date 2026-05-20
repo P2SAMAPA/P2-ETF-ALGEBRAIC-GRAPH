@@ -14,8 +14,12 @@ def convert_to_serializable(obj):
         return float(obj)
     if isinstance(obj, np.integer):
         return int(obj)
+    if isinstance(obj, (np.bool_, bool)):
+        return bool(obj)
     if isinstance(obj, dict):
         return {k: convert_to_serializable(v) for k, v in obj.items()}
+    if isinstance(obj, (list, tuple)):
+        return [convert_to_serializable(i) for i in obj]
     return obj
 
 def main():
